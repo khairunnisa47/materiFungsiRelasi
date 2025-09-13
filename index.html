@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>IF 1</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD Fungsi Invers - Pendekatan Dunia Nyata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+            40%, 43% { transform: translate3d(0,-30px,0); }
+            70% { transform: translate3d(0,-15px,0); }
+            90% { transform: translate3d(0,-4px,0); }
+        }
+        
+        .animate-slideIn { animation: slideIn 0.5s ease-out; }
+        .animate-bounce { animation: bounce 1s ease-in-out; }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: slideIn 0.3s ease-out; }
+        
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 min-h-screen">
+    <!-- Header -->
+    <div class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+            <h1 class="text-4xl font-bold text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
+                🎯 LKS: Petualangan Menemukan Invers Fungsi
+            </h1>
+            <p class="text-center text-gray-600 mb-2">Belajar Aktif dengan Eksplorasi dan Penemuan Konsep</p>
+            <div class="text-center text-sm text-gray-500">
+                <span class="bg-purple-100 px-4 py-2 rounded-full font-semibold text-purple-800">👩‍🏫 Guru: Khairunnisa, S.Pd</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="max-w-6xl mx-auto px-4 py-4">
+        <div class="bg-white rounded-xl shadow-lg p-2">
+            <div class="flex flex-wrap gap-2">
+                <button onclick="showTab('konteks')" class="tab-button active flex-1 min-w-0 px-4 py-3 rounded-lg font-semibold transition-all duration-300 bg-gray-100 hover:bg-gray-200">
+                    🌍 Konteks Nyata
+                </button>
+                <button onclick="showTab('aktivitas1')" class="tab-button flex-1 min-w-0 px-4 py-3 rounded-lg font-semibold transition-all duration-300 bg-gray-100 hover:bg-gray-200">
+                    📚 Aktivitas 1
+                </button>
+                <button onclick="showTab('aktivitas2')" class="tab-button flex-1 min-w-0 px-4 py-3 rounded-lg font-semibold transition-all duration-300 bg-gray-100 hover:bg-gray-200">
+                    🎯 Aktivitas 2
+                </button>
+                <button onclick="showTab('aktivitas3')" class="tab-button flex-1 min-w-0 px-4 py-3 rounded-lg font-semibold transition-all duration-300 bg-gray-100 hover:bg-gray-200">
+                    ⚡ Aktivitas 3
+                </button>
+                <button onclick="showTab('soal-individu')" class="tab-button flex-1 min-w-0 px-4 py-3 rounded-lg font-semibold transition-all duration-300 bg-gray-100 hover:bg-gray-200">
+                    📝 Soal Individu
+                </button>
+                <button onclick="showTab('refleksi')" class="tab-button flex-1 min-w-0 px-4 py-3 rounded-lg font-semibold transition-all duration-300 bg-gray-100 hover:bg-gray-200">
+                    🤔 Refleksi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 pb-8">
+        <!-- Tab Konteks Nyata -->
+        <div id="konteks" class="tab-content active">
+            <!-- Situasi Nyata: Aplikasi Ojek Online -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-4 rounded-lg mb-6">
+                    <h2 class="text-2xl font-bold mb-2">🚗 Selamat Datang di Dunia Ojek Online!</h2>
+                    <p class="text-green-100">Mari kita mulai petualangan matematika dari kehidupan sehari-hari</p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg mb-6">
+                    <h3 class="font-bold text-blue-800 mb-4">📱 Cerita Sari dan Aplikasi Ojek Online</h3>
+                    <div class="space-y-4">
+                        <p class="text-gray-700 text-lg">Sari adalah mahasiswa yang sering menggunakan ojek online. Dia memperhatikan pola menarik dalam tarif perjalanan...</p>
+                        
+                        <div class="bg-white p-6 rounded-lg border-2 border-blue-200 shadow-sm">
+                            <h4 class="font-semibold text-blue-800 mb-3">🎯 Situasi yang Sari Temukan:</h4>
+                            <div class="space-y-3">
+                                <p class="text-gray-700">• Tarif dasar: Rp 5.000</p>
+                                <p class="text-gray-700">• Biaya per kilometer: Rp 2.000</p>
+                                <p class="text-gray-700">• Total biaya = 5.000 + (2.000 × jarak)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aktivitas Eksplorasi -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-6">
+                    <h3 class="font-semibold text-yellow-800 mb-4">🤔 Mari Kita Eksplorasi Bersama!</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">Pertanyaan 1: Menghitung Biaya</h4>
+                            <p class="text-gray-700 mb-3">Jika Sari bepergian sejauh 3 km, berapa biaya yang harus dibayar?</p>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-gray-700">Biaya = 5.000 + (2.000 ×</span>
+                                <input type="text" id="konteks1" class="border border-gray-300 rounded px-2 py-1 w-12 text-center" placeholder="...">
+                                <span class="text-gray-700">) = Rp</span>
+                                <input type="text" id="konteks2" class="border border-gray-300 rounded px-2 py-1 w-20 text-center" placeholder="...">
+                                <button onclick="checkKonteks1()" class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Cek</button>
+                                <span id="check_konteks1" class="text-sm"></span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">Pertanyaan 2: Masalah Sebaliknya</h4>
+                            <p class="text-gray-700 mb-3">Suatu hari, Sari membayar Rp 15.000. Berapa jarak yang ditempuh?</p>
+                            <div class="space-y-2">
+                                <p class="text-gray-700 text-sm">15.000 = 5.000 + (2.000 × jarak)</p>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-gray-700">Jarak =</span>
+                                    <input type="text" id="konteks3" class="border border-gray-300 rounded px-2 py-1 w-16 text-center" placeholder="...">
+                                    <span class="text-gray-700">km</span>
+                                    <button onclick="checkKonteks2()" class="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600">Cek</button>
+                                    <span id="check_konteks2" class="text-sm"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Refleksi Awal -->
+                <div class="bg-purple-50 border-l-4 border-purple-400 p-6">
+                    <h3 class="font-semibold text-purple-800 mb-4">💡 Aha Moment!</h3>
+                    <div class="space-y-3">
+                        <p class="text-purple-700">Perhatikan bahwa kita melakukan dua proses yang berlawanan:</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-3 rounded border-l-2 border-blue-400">
+                                <p class="font-semibold text-blue-800">Proses 1: Jarak → Biaya</p>
+                                <p class="text-sm text-gray-600">f(jarak) = 5000 + 2000×jarak</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border-l-2 border-green-400">
+                                <p class="font-semibold text-green-800">Proses 2: Biaya → Jarak</p>
+                                <p class="text-sm text-gray-600">Bagaimana rumusnya?</p>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-100 p-3 rounded mt-4">
+                            <p class="text-yellow-800 font-semibold">🎯 Tujuan Pembelajaran:</p>
+                            <p class="text-yellow-700">Kita akan belajar bagaimana membuat "rumus kebalikan" yang disebut INVERS FUNGSI!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eksplorasi Konsep -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4">🔍 Mari Eksplorasi Lebih Dalam</h2>
+                
+                <div class="space-y-6">
+                    <!-- Aktivitas Interaktif 1 -->
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                        <h3 class="font-semibold text-blue-800 mb-3">🎯 Aktivitas 1: Mesin Ajaib</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg text-center">
+                                <h4 class="font-bold text-gray-800 mb-2">Input</h4>
+                                <div class="bg-blue-100 p-3 rounded">
+                                    <p class="text-2xl">3</p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg text-center">
+                                <h4 class="font-bold text-gray-800 mb-2">Mesin f(x) = 2x + 1</h4>
+                                <div class="bg-purple-100 p-3 rounded">
+                                    <p class="text-lg">2(3) + 1</p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg text-center">
+                                <h4 class="font-bold text-gray-800 mb-2">Output</h4>
+                                <div class="bg-green-100 p-3 rounded">
+                                    <p class="text-2xl">7</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 bg-yellow-50 rounded">
+                            <p class="text-yellow-800"><strong>Tantangan:</strong> Jika output-nya 7, bisakah kita mencari input aslinya? Mesin apa yang diperlukan?</p>
+                        </div>
+                    </div>
+
+                    <!-- Penemuan Konsep -->
+                    <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                        <h3 class="font-semibold text-green-800 mb-3">💡 Penemuan Konsep</h3>
+                        <div class="space-y-3">
+                            <p class="text-green-700">Untuk "membalikkan" proses mesin f(x) = 2x + 1, kita perlu mesin baru yang:</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-semibold text-gray-800">Langkah Mundur:</p>
+                                    <p class="text-sm text-gray-600">7 → (7-1) → 6 → 6÷2 → 3</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-semibold text-gray-800">Rumus Baru:</p>
+                                    <p class="text-sm text-gray-600">f⁻¹(x) = (x-1)/2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Definisi Formal Bertahap -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4">📚 Membangun Definisi Formal</h2>
+                
+                <div class="space-y-6">
+                    <!-- Tahap 1: Pengertian Sederhana -->
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-blue-800 mb-3">Tahap 1: Pengertian Sederhana</h3>
+                        <div class="bg-white p-4 rounded border-l-4 border-blue-400">
+                            <p class="text-gray-700 mb-2"><strong>Invers Fungsi</strong> adalah fungsi yang "membalikkan" kerja fungsi asli.</p>
+                            <p class="text-gray-700">Jika fungsi f mengubah A menjadi B, maka invers f⁻¹ mengubah B kembali menjadi A.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tahap 2: Notasi dan Simbol -->
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-green-800 mb-3">Tahap 2: Notasi dan Simbol</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded">
+                                <h4 class="font-semibold text-gray-800 mb-2">Fungsi Asli</h4>
+                                <p class="text-lg font-mono">y = f(x)</p>
+                                <p class="text-sm text-gray-600">Dibaca: "y sama dengan f dari x"</p>
+                            </div>
+                            <div class="bg-white p-4 rounded">
+                                <h4 class="font-semibold text-gray-800 mb-2">Fungsi Invers</h4>
+                                <p class="text-lg font-mono">x = f⁻¹(y)</p>
+                                <p class="text-sm text-gray-600">Dibaca: "x sama dengan f invers dari y"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tahap 3: Definisi Matematis -->
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-purple-800 mb-3">Tahap 3: Definisi Matematis</h3>
+                        <div class="bg-white p-4 rounded border-l-4 border-purple-400">
+                            <p class="text-gray-700 mb-3"><strong>Definisi Formal:</strong></p>
+                            <p class="text-gray-700 mb-2">Fungsi f⁻¹ adalah invers dari fungsi f jika dan hanya jika:</p>
+                            <div class="grid md:grid-cols-2 gap-4 mt-3">
+                                <div class="bg-purple-50 p-3 rounded">
+                                    <p class="font-mono text-center">f(f⁻¹(x)) = x</p>
+                                    <p class="text-xs text-center text-gray-600 mt-1">untuk setiap x dalam domain f⁻¹</p>
+                                </div>
+                                <div class="bg-purple-50 p-3 rounded">
+                                    <p class="font-mono text-center">f⁻¹(f(x)) = x</p>
+                                    <p class="text-xs text-center text-gray-600 mt-1">untuk setiap x dalam domain f</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Syarat-syarat Invers Fungsi -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4">⚖️ Syarat-syarat Invers Fungsi</h2>
+                
+                <div class="space-y-6">
+                    <!-- Syarat 1: Fungsi Satu-satu -->
+                    <div class="bg-red-50 border-l-4 border-red-400 p-4">
+                        <h3 class="font-semibold text-red-800 mb-3">Syarat 1: Fungsi Harus Satu-satu (Injektif)</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded">
+                                <h4 class="font-semibold text-green-800 mb-2">✅ Contoh BENAR</h4>
+                                <p class="text-sm text-gray-700 mb-2">f(x) = 2x + 3</p>
+                                <div class="space-y-1 text-xs">
+                                    <p>f(1) = 5</p>
+                                    <p>f(2) = 7</p>
+                                    <p>f(3) = 9</p>
+                                </div>
+                                <p class="text-green-600 text-sm mt-2">Setiap input menghasilkan output berbeda</p>
+                            </div>
+                            <div class="bg-white p-4 rounded">
+                                <h4 class="font-semibold text-red-800 mb-2">❌ Contoh SALAH</h4>
+                                <p class="text-sm text-gray-700 mb-2">g(x) = x²</p>
+                                <div class="space-y-1 text-xs">
+                                    <p>g(-2) = 4</p>
+                                    <p>g(2) = 4</p>
+                                    <p>g(-3) = 9</p>
+                                    <p>g(3) = 9</p>
+                                </div>
+                                <p class="text-red-600 text-sm mt-2">Input berbeda menghasilkan output sama</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Syarat 2: Fungsi Onto -->
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                        <h3 class="font-semibold text-blue-800 mb-3">Syarat 2: Fungsi Harus Onto (Surjektif)</h3>
+                        <div class="bg-white p-4 rounded">
+                            <p class="text-gray-700 mb-2">Setiap elemen di kodomain harus menjadi hasil pemetaan dari domain.</p>
+                            <div class="grid md:grid-cols-2 gap-4 mt-3">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <h4 class="font-semibold text-blue-800 text-sm">Domain f</h4>
+                                    <p class="text-xs">Semua bilangan real</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <h4 class="font-semibold text-green-800 text-sm">Kodomain f</h4>
+                                    <p class="text-xs">Semua bilangan real</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kesimpulan Syarat -->
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h3 class="font-semibold text-yellow-800 mb-3">📋 Kesimpulan Syarat</h3>
+                        <div class="bg-white p-4 rounded">
+                            <p class="text-gray-700 mb-2"><strong>Fungsi memiliki invers jika dan hanya jika fungsi tersebut BIJEKTIF</strong></p>
+                            <p class="text-gray-700">Bijektif = Injektif (satu-satu) + Surjektif (onto)</p>
+                            <div class="mt-3 p-3 bg-green-50 rounded">
+                                <p class="text-green-800 font-semibold">Uji Garis Horizontal:</p>
+                                <p class="text-green-700 text-sm">Jika setiap garis horizontal memotong grafik fungsi tepat di satu titik, maka fungsi memiliki invers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contoh Analisis Mendalam -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4">🔬 Analisis Mendalam dengan Contoh</h2>
+                
+                <div class="space-y-6">
+                    <!-- Contoh 1: Fungsi Linear -->
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-blue-800 mb-4">Contoh 1: Fungsi Linear f(x) = 3x - 2</h3>
+                        
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Langkah 1: Cek Syarat</h4>
+                                <div class="space-y-2 text-sm">
+                                    <p>✅ Satu-satu: Gradien ≠ 0</p>
+                                    <p>✅ Onto: Domain = Kodomain = ℝ</p>
+                                    <p class="text-green-600 font-semibold">Memiliki invers!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Langkah 2: Cari Invers</h4>
+                                <div class="space-y-1 text-sm font-mono">
+                                    <p>y = 3x - 2</p>
+                                    <p>x = 3y - 2</p>
+                                    <p>x + 2 = 3y</p>
+                                    <p>y = (x + 2)/3</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Langkah 3: Verifikasi</h4>
+                                <div class="space-y-1 text-sm">
+                                    <p>f(f⁻¹(x)) = f((x+2)/3)</p>
+                                    <p>= 3((x+2)/3) - 2</p>
+                                    <p>= x + 2 - 2 = x ✅</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 2: Fungsi Kuadrat -->
+                    <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-red-800 mb-4">Contoh 2: Fungsi Kuadrat g(x) = x²</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Analisis Syarat</h4>
+                                <div class="space-y-2 text-sm">
+                                    <p>❌ Tidak satu-satu: g(-2) = g(2) = 4</p>
+                                    <p>❌ Tidak onto: tidak ada x yang menghasilkan y < 0</p>
+                                    <p class="text-red-600 font-semibold">Tidak memiliki invers!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Solusi: Pembatasan Domain</h4>
+                                <div class="space-y-2 text-sm">
+                                    <p>Batasi domain: x ≥ 0</p>
+                                    <p>Maka g(x) = x², x ≥ 0</p>
+                                    <p>Inversnya: g⁻¹(x) = √x, x ≥ 0</p>
+                                    <p class="text-green-600 font-semibold">Sekarang memiliki invers!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Langkah Mencari Invers -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4">🔍 Cara Mencari Fungsi Invers</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-gray-800">📋 Langkah-langkah:</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                                <p class="text-gray-700">Tulis y = f(x)</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                                <p class="text-gray-700">Tukar posisi x dan y</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                                <p class="text-gray-700">Selesaikan untuk y</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
+                                <p class="text-gray-700">Tulis y = f⁻¹(x)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-gray-800 mb-3">💡 Contoh: f(x) = 2x + 3</h3>
+                        <div class="space-y-2 text-sm font-mono">
+                            <p>1. y = 2x + 3</p>
+                            <p>2. x = 2y + 3</p>
+                            <p>3. x - 3 = 2y</p>
+                            <p>   y = (x - 3)/2</p>
+                            <p>4. f⁻¹(x) = (x - 3)/2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aplikasi Nyata -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4">🌍 Aplikasi dalam Kehidupan</h2>
+                
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-blue-800 mb-2">💰 Ekonomi</h3>
+                        <p class="text-sm text-blue-700">Konversi mata uang, perhitungan pajak, dan diskon</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-green-800 mb-2">🔬 Sains</h3>
+                        <p class="text-sm text-green-700">Konversi satuan, rumus fisika, dan kimia</p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-orange-800 mb-2">💻 Teknologi</h3>
+                        <p class="text-sm text-orange-700">Enkripsi data, kompresi file, dan algoritma</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Aktivitas 2 -->
+        <div id="aktivitas2" class="tab-content">
+            <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-4 rounded-lg mb-6">
+                <h2 class="text-2xl font-bold mb-2">🎯 Aktivitas 2: Paket Data Internet</h2>
+                <p class="text-green-100">Menerapkan konsep invers fungsi pada kasus paket data internet!</p>
+            </div>
+
+            <!-- Aktivitas Paket Data -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-xl font-bold text-green-800 mb-4">📱 Kasus: Paket Data Internet</h3>
+                
+                <div class="bg-green-50 p-6 rounded-lg mb-6">
+                    <h4 class="font-semibold text-green-800 mb-4">📱 Kasus: Paket Data Internet</h4>
+                    <p class="text-gray-700 mb-4">Biaya paket data: f(x) = 15000 + 5000x (x = GB tambahan)</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg border-2 border-green-200">
+                            <h5 class="font-semibold text-gray-800 mb-3">Soal 1: Tentukan fungsi invers f⁻¹(x)</h5>
+                            <div class="flex items-center space-x-2 flex-wrap">
+                                <span class="text-gray-700">f⁻¹(x) = (x -</span>
+                                <input type="text" id="app1_1" class="border border-gray-300 rounded px-2 py-1 w-16 text-center" placeholder="...">
+                                <span class="text-gray-700">)/</span>
+                                <input type="text" id="app1_2" class="border border-gray-300 rounded px-2 py-1 w-16 text-center" placeholder="...">
+                                <button onclick="checkApp1()" class="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600">Cek</button>
+                                <span id="check_app1" class="text-sm"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border-2 border-green-200">
+                            <h5 class="font-semibold text-gray-800 mb-3">Soal 2: Jika membayar Rp 40.000, berapa GB tambahan yang didapat?</h5>
+                            <div class="flex items-center space-x-2 flex-wrap">
+                                <span class="text-gray-700">GB tambahan =</span>
+                                <input type="text" id="app1_3" class="border border-gray-300 rounded px-2 py-1 w-16 text-center" placeholder="...">
+                                <span class="text-gray-700">GB</span>
+                                <button onclick="checkApp1_2()" class="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600">Cek</button>
+                                <span id="check_app1_2" class="text-sm"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Progress Aktivitas 2 -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-semibold text-gray-800 mb-3">📊 Progress Aktivitas 2</h3>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                    <div id="aktivitas2Progress" class="bg-gradient-to-r from-green-500 to-blue-500 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+                <p id="aktivitas2Text" class="text-center mt-2 text-gray-600">0% selesai</p>
+            </div>
+        </div>
+
+        <!-- Tab Aktivitas 3 -->
+        <div id="aktivitas3" class="tab-content">
+            <div class="bg-gradient-to-r from-purple-400 to-pink-500 text-white p-4 rounded-lg mb-6">
+                <h2 class="text-2xl font-bold mb-2">⚡ Aktivitas 3: Konsumsi Listrik</h2>
+                <p class="text-purple-100">Menerapkan konsep invers fungsi pada kasus konsumsi listrik rumah tangga!</p>
+            </div>
+
+            <!-- Aktivitas Listrik -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-xl font-bold text-blue-800 mb-4">🔋 Kasus: Konsumsi Listrik</h3>
+                
+                <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                    <h4 class="font-semibold text-blue-800 mb-4">💡 Tarif Listrik PLN</h4>
+                    <p class="text-gray-700 mb-4">Biaya listrik: g(x) = 1500x + 25000 (x = kWh yang digunakan)</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg border-2 border-blue-200">
+                            <h5 class="font-semibold text-gray-800 mb-3">Soal 1: Tentukan g⁻¹(x) untuk mencari kWh dari total biaya</h5>
+                            <div class="flex items-center space-x-2 flex-wrap">
+                                <span class="text-gray-700">g⁻¹(x) = (x -</span>
+                                <input type="text" id="app2_1" class="border border-gray-300 rounded px-2 py-1 w-16 text-center" placeholder="...">
+                                <span class="text-gray-700">)/</span>
+                                <input type="text" id="app2_2" class="border border-gray-300 rounded px-2 py-1 w-16 text-center" placeholder="...">
+                                <button onclick="checkApp2()" class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Cek</button>
+                                <span id="check_app2" class="text-sm"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border-2 border-blue-200">
+                            <h5 class="font-semibold text-gray-800 mb-3">Soal 2: Jika tagihan listrik Rp 100.000, berapa kWh yang digunakan?</h5>
+                            <div class="flex items-center space-x-2 flex-wrap">
+                                <span class="text-gray-700">kWh =</span>
+                                <input type="text" id="app2_3" class="border border-gray-300 rounded px-2 py-1 w-16 text-center" placeholder="...">
+                                <button onclick="checkApp2_2()" class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Cek</button>
+                                <span id="check_app2_2" class="text-sm"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Aktivitas 3 -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-semibold text-gray-800 mb-3">📊 Progress Aktivitas 3</h3>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                    <div id="aktivitas3Progress" class="bg-gradient-to-r from-purple-500 to-pink-500 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+                <p id="aktivitas3Text" class="text-center mt-2 text-gray-600">0% selesai</p>
+            </div>
+        </div>
+
+        <!-- Tab Soal Individu -->
+        <div id="soal-individu" class="tab-content">
+            <div class="bg-gradient-to-r from-orange-400 to-red-500 text-white p-4 rounded-lg mb-6">
+                <h2 class="text-2xl font-bold mb-2">📝 Soal Individu: Uji Kemampuan</h2>
+                <p class="text-orange-100">Kerjakan soal-soal berikut secara mandiri untuk mengukur pemahamanmu!</p>
+            </div>
+
+            <!-- Petunjuk Pengerjaan -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-xl font-bold text-orange-800 mb-4">📋 Petunjuk Pengerjaan</h3>
+                <div class="bg-orange-50 p-4 rounded-lg">
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-600 font-bold">•</span>
+                            <span>Kerjakan semua soal dengan teliti dan sistematis</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-600 font-bold">•</span>
+                            <span>Tunjukkan langkah-langkah penyelesaian dengan jelas</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-600 font-bold">•</span>
+                            <span>Periksa kembali jawaban sebelum mengirim</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-600 font-bold">•</span>
+                            <span>Waktu pengerjaan: 45 menit</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Soal 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Soal 1: Fungsi Biaya Parkir (20 poin)</h3>
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <p class="text-gray-700 mb-3">
+                        Sebuah tempat parkir mengenakan tarif sebagai berikut:<br>
+                        • Biaya masuk: Rp 3.000<br>
+                        • Biaya per jam: Rp 2.500<br>
+                        Fungsi biaya parkir: f(t) = 3000 + 2500t (t = waktu dalam jam)
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">a) Tentukan fungsi invers f⁻¹(x)! (10 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="4" placeholder="Tuliskan langkah-langkah mencari f⁻¹(x)..."></textarea>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">b) Jika seseorang membayar Rp 13.000, berapa lama dia parkir? (10 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="Gunakan fungsi invers untuk menyelesaikan..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Soal 2: Konversi Mata Uang (25 poin)</h3>
+                <div class="bg-green-50 p-4 rounded-lg mb-4">
+                    <p class="text-gray-700 mb-3">
+                        Kurs tukar Rupiah ke Dollar: 1 USD = Rp 15.000<br>
+                        Fungsi konversi: g(x) = 15000x (x = jumlah USD, g(x) = jumlah Rupiah)
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">a) Tentukan g⁻¹(x) untuk mengubah Rupiah ke USD! (10 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="Tuliskan fungsi invers g⁻¹(x)..."></textarea>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">b) Berapa USD yang bisa ditukar dengan Rp 450.000? (10 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="Hitung menggunakan fungsi invers..."></textarea>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">c) Verifikasi jawaban dengan menghitung g(g⁻¹(450000))! (5 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="2" placeholder="Tunjukkan verifikasi..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Soal 3: Fungsi Kuadratik (25 poin)</h3>
+                <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                    <p class="text-gray-700 mb-3">
+                        Diberikan fungsi h(x) = x² - 4x + 5 dengan domain x ≥ 2
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">a) Jelaskan mengapa domain dibatasi x ≥ 2! (8 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="Jelaskan alasan pembatasan domain..."></textarea>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">b) Tentukan h⁻¹(x)! (12 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="4" placeholder="Tuliskan langkah-langkah mencari h⁻¹(x)..."></textarea>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">c) Tentukan domain dan range dari h⁻¹(x)! (5 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="2" placeholder="Domain h⁻¹(x): ... Range h⁻¹(x): ..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 4 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Soal 4: Aplikasi Nyata (30 poin)</h3>
+                <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                    <p class="text-gray-700 mb-3">
+                        Seorang pedagang buah menjual jeruk dengan sistem:<br>
+                        • Harga per kg: Rp 8.000<br>
+                        • Diskon 10% untuk pembelian di atas 5 kg<br>
+                        • Biaya kemasan: Rp 2.000 (untuk semua pembelian)
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">a) Buat fungsi biaya f(x) untuk pembelian ≤ 5 kg! (8 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="2" placeholder="f(x) = ..."></textarea>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">b) Buat fungsi biaya g(x) untuk pembelian > 5 kg! (8 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="2" placeholder="g(x) = ..."></textarea>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">c) Tentukan invers dari f(x)! (7 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="f⁻¹(x) = ..."></textarea>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">d) Jika seseorang membayar Rp 42.000, berapa kg jeruk yang dibeli? (7 poin)</h4>
+                        <textarea class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="Gunakan fungsi invers yang sesuai..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informasi Penilaian -->
+            <div class="bg-gradient-to-r from-orange-400 to-red-500 text-white p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-bold mb-4">📊 Kriteria Penilaian</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Aspek yang Dinilai:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Ketepatan konsep (40%)</li>
+                            <li>• Langkah penyelesaian (35%)</li>
+                            <li>• Kejelasan jawaban (15%)</li>
+                            <li>• Verifikasi hasil (10%)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Skala Nilai:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• 90-100: Sangat Baik (A)</li>
+                            <li>• 80-89: Baik (B)</li>
+                            <li>• 70-79: Cukup (C)</li>
+                            <li>• <70: Perlu Perbaikan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Submit -->
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Selesai Mengerjakan?</h3>
+                <div class="space-y-4">
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <p class="text-yellow-800 mb-2">⚠️ Pastikan semua jawaban sudah lengkap sebelum mengirim!</p>
+                        <p class="text-sm text-yellow-700">Setelah dikirim, jawaban tidak dapat diubah lagi.</p>
+                    </div>
+                    <button onclick="submitSoal()" class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105">
+                        📤 Kirim Jawaban
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Merefleksi -->
+        <div id="refleksi" class="tab-content">
+            <div class="bg-gradient-to-r from-purple-400 to-pink-500 text-white p-4 rounded-lg mb-6">
+                <h2 class="text-2xl font-bold mb-2">🤔 Refleksi: Evaluasi Pembelajaran</h2>
+                <p class="text-purple-100">Mari renungkan apa yang telah kamu pelajari dan bagaimana penerapannya!</p>
+            </div>
+
+            <!-- Refleksi Konsep -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-xl font-bold text-purple-800 mb-4">💭 Refleksi Konsep</h3>
+                
+                <div class="space-y-6">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-purple-800 mb-3">1. Apa yang kamu pahami tentang fungsi invers?</h4>
+                        <textarea id="refleksi1" class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="Tuliskan pemahamanmu tentang fungsi invers..."></textarea>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-800 mb-3">2. Bagaimana cara mencari fungsi invers?</h4>
+                        <textarea id="refleksi2" class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="Jelaskan langkah-langkah mencari fungsi invers..."></textarea>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-800 mb-3">3. Sebutkan 3 contoh penerapan fungsi invers dalam kehidupan sehari-hari!</h4>
+                        <textarea id="refleksi3" class="w-full p-3 border border-gray-300 rounded-lg" rows="4" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Evaluasi Diri -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-xl font-bold text-purple-800 mb-4">⭐ Evaluasi Diri</h3>
+                
+                <div class="space-y-4">
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Seberapa baik kamu memahami materi ini?</h4>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="pemahaman" value="1" class="mr-2">
+                                <span>😕 Masih bingung</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="pemahaman" value="2" class="mr-2">
+                                <span>😐 Cukup paham</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="pemahaman" value="3" class="mr-2">
+                                <span>😊 Paham dengan baik</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="pemahaman" value="4" class="mr-2">
+                                <span>🤩 Sangat paham</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-800 mb-3">Bagian mana yang paling sulit?</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2">
+                                <span>Memahami konsep fungsi invers</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2">
+                                <span>Mencari rumus fungsi invers</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2">
+                                <span>Menerapkan dalam soal cerita</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2">
+                                <span>Verifikasi hasil</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-800 mb-3">Apa yang akan kamu lakukan selanjutnya?</h4>
+                        <textarea id="rencana" class="w-full p-3 border border-gray-300 rounded-lg" rows="3" placeholder="Tuliskan rencana belajarmu selanjutnya..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kesimpulan -->
+            <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">🎯 Kesimpulan Pembelajaran</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">✅ Yang Sudah Dipelajari:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Konsep fungsi invers</li>
+                            <li>• Cara mencari fungsi invers</li>
+                            <li>• Penerapan dalam kehidupan</li>
+                            <li>• Verifikasi hasil</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">🚀 Langkah Selanjutnya:</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Latihan soal lebih banyak</li>
+                            <li>• Eksplorasi fungsi kompleks</li>
+                            <li>• Hubungan dengan grafik</li>
+                            <li>• Aplikasi lanjutan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Aktivitas 1 -->
+        <div id="aktivitas1" class="tab-content">
+            <!-- Panduan Belajar Mandiri -->
+            <div class="bg-gradient-to-r from-blue-400 to-purple-500 text-white p-4 rounded-lg mb-6">
+                <h2 class="text-2xl font-bold mb-2">📚 Aktivitas 1: Latihan Terbimbing</h2>
+                <p class="text-blue-100">Mari membangun pemahaman melalui latihan terbimbing step by step!</p>
+            </div>
+
+            <!-- Aktivitas Penemuan 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <h3 class="text-xl font-bold text-purple-800 mb-4">🔍 Aktivitas Penemuan 1: Pola dalam Fungsi</h3>
+                
+                <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                    <h4 class="font-semibold text-blue-800 mb-4">Mari kita kembali ke cerita Sari dan ojek online!</h4>
+                    <p class="text-gray-700 mb-4">Fungsi biaya: f(x) = 5000 + 2000x (x = jarak dalam km)</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-3">📊 Tabel Eksplorasi</h5>
+                            <div class="space-y-2">
+                                <div class="grid grid-cols-3 gap-2 text-sm font-semibold bg-gray-100 p-2 rounded">
+                                    <span>Jarak (km)</span>
+                                    <span>Proses</span>
+                                    <span>Biaya (Rp)</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 text-sm p-2">
+                                    <span>1</span>
+                                    <span>5000 + 2000(1)</span>
+                                    <span>7000</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 text-sm p-2 bg-yellow-50">
+                                    <span>2</span>
+                                    <span>5000 + 2000(2)</span>
+                                    <input type="text" id="tabel1" class="border rounded px-1 w-16 text-center" placeholder="...">
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 text-sm p-2">
+                                    <span>3</span>
+                                    <span>5000 + 2000(3)</span>
+                                    <input type="text" id="tabel2" class="border rounded px-1 w-16 text-center" placeholder="...">
+                                </div>
+                            </div>
+                            <button onclick="checkTabel()" class="mt-3 bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Cek Jawaban</button>
+                            <span id="check_tabel" class="text-sm ml-2"></span>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg">
+                            <h5 class="font-semibold text-gray-800 mb-3">🔄 Proses Kebalikan</h5>
+                            <p class="text-gray-700 text-sm mb-3">Sekarang, jika kita tahu biayanya, bagaimana mencari jaraknya?</p>
+                            <div class="space-y-2">
+                                <div class="grid grid-cols-3 gap-2 text-sm font-semibold bg-gray-100 p-2 rounded">
+                                    <span>Biaya (Rp)</span>
+                                    <span>Proses</span>
+                                    <span>Jarak (km)</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 text-sm p-2">
+                                    <span>7000</span>
+                                    <span>(7000-5000)/2000</span>
+                                    <span>1</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 text-sm p-2 bg-yellow-50">
+                                    <span>9000</span>
+                                    <span>(9000-5000)/2000</span>
+                                    <input type="text" id="tabel3" class="border rounded px-1 w-16 text-center" placeholder="...">
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 text-sm p-2">
+                                    <span>11000</span>
+                                    <span>(11000-5000)/2000</span>
+                                    <input type="text" id="tabel4" class="border rounded px-1 w-16 text-center" placeholder="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Penemuan Konsep -->
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                    <h3 class="font-semibold text-blue-800 mb-3">Soal 1: Konversi Suhu 🌡️</h3>
+                    <p class="text-blue-700 mb-3">Fungsi untuk mengubah Celsius ke Fahrenheit: f(C) = (9/5)C + 32</p>
+                    <p class="text-blue-700 mb-3">Tentukan fungsi invers untuk mengubah Fahrenheit ke Celsius!</p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 flex-wrap">
+                            <span class="text-blue-700">f⁻¹(F) = (</span>
+                            <input type="text" id="soal1_1" class="border border-gray-300 rounded px-2 py-1 w-12 text-center" placeholder="...">
+                            <span class="text-blue-700">)(F -</span>
+                            <input type="text" id="soal1_2" class="border border-gray-300 rounded px-2 py-1 w-12 text-center" placeholder="...">
+                            <span class="text-blue-700">)</span>
+                            <button onclick="checkSoal1()" class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Cek</button>
+                            <span id="check_soal1" class="text-sm"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soal 2 -->
+                <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
+                    <h3 class="font-semibold text-green-800 mb-3">Soal 2: Toko Online 🛒</h3>
+                    <p class="text-green-700 mb-3">Harga setelah diskon 20%: f(x) = 0.8x (x = harga asli)</p>
+                    <p class="text-green-700 mb-3">Jika harga setelah diskon Rp 80.000, berapa harga aslinya?</p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 flex-wrap">
+                            <span class="text-green-700">f⁻¹(x) =</span>
+                            <input type="text" id="soal2_1" class="border border-gray-300 rounded px-2 py-1 w-16 text-center" placeholder="...">
+                            <button onclick="checkSoal2()" class="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600">Cek</button>
+                            <span id="check_soal2" class="text-sm"></span>
+                        </div>
+                        <div class="flex items-center space-x-2 flex-wrap">
+                            <span class="text-green-700">Harga asli = Rp</span>
+                            <input type="text" id="soal2_2" class="border border-gray-300 rounded px-2 py-1 w-20 text-center" placeholder="...">
+                            <button onclick="checkSoal2_harga()" class="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600">Cek</button>
+                            <span id="check_soal2_harga" class="text-sm"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soal 3 -->
+                <div class="bg-purple-50 border-l-4 border-purple-400 p-4 mb-6">
+                    <h3 class="font-semibold text-purple-800 mb-3">Soal 3: Fungsi Linear 📈</h3>
+                    <p class="text-purple-700 mb-3">Diberikan f(x) = 3x - 5. Tentukan f⁻¹(x)!</p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 flex-wrap">
+                            <span class="text-purple-700">f⁻¹(x) = (x +</span>
+                            <input type="text" id="soal3_1" class="border border-gray-300 rounded px-2 py-1 w-12 text-center" placeholder="...">
+                            <span class="text-purple-700">)/</span>
+                            <input type="text" id="soal3_2" class="border border-gray-300 rounded px-2 py-1 w-12 text-center" placeholder="...">
+                            <button onclick="checkSoal3()" class="bg-purple-500 text-white px-3 py-1 rounded text-sm hover:bg-purple-600">Cek</button>
+                            <span id="check_soal3" class="text-sm"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Latihan -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-3">📊 Progress Latihan</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div id="latihanProgress" class="bg-gradient-to-r from-blue-500 to-purple-500 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                    <p id="latihanText" class="text-center mt-2 text-gray-600">0% selesai</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        let aktivitas1Completed = 0;
+        let aktivitas2Completed = 0;
+        let aktivitas3Completed = 0;
+        const totalAktivitas1 = 4;
+        const totalAktivitas2 = 2;
+        const totalAktivitas3 = 2;
+
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function updateAktivitas1Progress() {
+            const percentage = (aktivitas1Completed / totalAktivitas1) * 100;
+            document.getElementById('latihanProgress').style.width = percentage + '%';
+            document.getElementById('latihanText').textContent = Math.round(percentage) + '% selesai';
+        }
+
+        function updateAktivitas2Progress() {
+            const percentage = (aktivitas2Completed / totalAktivitas2) * 100;
+            document.getElementById('aktivitas2Progress').style.width = percentage + '%';
+            document.getElementById('aktivitas2Text').textContent = Math.round(percentage) + '% selesai';
+        }
+
+        function updateAktivitas3Progress() {
+            const percentage = (aktivitas3Completed / totalAktivitas3) * 100;
+            document.getElementById('aktivitas3Progress').style.width = percentage + '%';
+            document.getElementById('aktivitas3Text').textContent = Math.round(percentage) + '% selesai';
+        }
+
+        function showSuccess(elementId, message = "✅ Benar!") {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = "text-green-600 font-semibold";
+            element.parentElement.classList.add('animate-bounce');
+            setTimeout(() => {
+                element.parentElement.classList.remove('animate-bounce');
+            }, 1000);
+        }
+
+        function showError(elementId, message = "❌ Coba lagi!") {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = "text-red-600 font-semibold";
+        }
+
+        // Fungsi untuk Konteks
+        function checkKonteks1() {
+            const answer1 = document.getElementById('konteks1').value.trim();
+            const answer2 = document.getElementById('konteks2').value.trim();
+            if (answer1 === "3" && answer2 === "11000") {
+                showSuccess('check_konteks1');
+            } else {
+                showError('check_konteks1');
+            }
+        }
+
+        function checkKonteks2() {
+            const answer = document.getElementById('konteks3').value.trim();
+            if (answer === "5") {
+                showSuccess('check_konteks2');
+            } else {
+                showError('check_konteks2');
+            }
+        }
+
+        function checkTabel() {
+            const answer1 = document.getElementById('tabel1').value.trim();
+            const answer2 = document.getElementById('tabel2').value.trim();
+            const answer3 = document.getElementById('tabel3').value.trim();
+            const answer4 = document.getElementById('tabel4').value.trim();
+            if (answer1 === "9000" && answer2 === "11000" && answer3 === "2" && answer4 === "3") {
+                showSuccess('check_tabel');
+            } else {
+                showError('check_tabel');
+            }
+        }
+
+        // Aktivitas 1 Functions
+        function checkSoal1() {
+            const answer1 = document.getElementById('soal1_1').value.trim();
+            const answer2 = document.getElementById('soal1_2').value.trim();
+            if ((answer1 === "5/9" || answer1 === "5" || answer1 === "(5/9)") && answer2 === "32") {
+                showSuccess('check_soal1');
+                aktivitas1Completed = Math.max(aktivitas1Completed, 1);
+                updateAktivitas1Progress();
+            } else {
+                showError('check_soal1');
+            }
+        }
+
+        function checkSoal2() {
+            const answer = document.getElementById('soal2_1').value.trim();
+            if (answer === "x/0.8" || answer === "x/0,8" || answer === "1.25x" || answer === "1,25x") {
+                showSuccess('check_soal2');
+                aktivitas1Completed = Math.max(aktivitas1Completed, 2);
+                updateAktivitas1Progress();
+            } else {
+                showError('check_soal2');
+            }
+        }
+
+        function checkSoal2_harga() {
+            const answer = document.getElementById('soal2_2').value.trim();
+            if (answer === "100000" || answer === "100.000") {
+                showSuccess('check_soal2_harga');
+                aktivitas1Completed = Math.max(aktivitas1Completed, 3);
+                updateAktivitas1Progress();
+            } else {
+                showError('check_soal2_harga');
+            }
+        }
+
+        function checkSoal3() {
+            const answer1 = document.getElementById('soal3_1').value.trim();
+            const answer2 = document.getElementById('soal3_2').value.trim();
+            if (answer1 === "5" && answer2 === "3") {
+                showSuccess('check_soal3');
+                aktivitas1Completed = Math.max(aktivitas1Completed, 4);
+                updateAktivitas1Progress();
+            } else {
+                showError('check_soal3');
+            }
+        }
+
+
+
+        // Aktivitas 2 Functions (Paket Data)
+        function checkApp1() {
+            const answer1 = document.getElementById('app1_1').value.trim();
+            const answer2 = document.getElementById('app1_2').value.trim();
+            if (answer1 === "15000" && answer2 === "5000") {
+                showSuccess('check_app1');
+                aktivitas2Completed = Math.max(aktivitas2Completed, 1);
+                updateAktivitas2Progress();
+            } else {
+                showError('check_app1');
+            }
+        }
+
+        function checkApp1_2() {
+            const answer = document.getElementById('app1_3').value.trim();
+            if (answer === "5") {
+                showSuccess('check_app1_2');
+                aktivitas2Completed = Math.max(aktivitas2Completed, 2);
+                updateAktivitas2Progress();
+            } else {
+                showError('check_app1_2');
+            }
+        }
+
+        // Aktivitas 3 Functions (Listrik)
+        function checkApp2() {
+            const answer1 = document.getElementById('app2_1').value.trim();
+            const answer2 = document.getElementById('app2_2').value.trim();
+            if (answer1 === "25000" && answer2 === "1500") {
+                showSuccess('check_app2');
+                aktivitas3Completed = Math.max(aktivitas3Completed, 1);
+                updateAktivitas3Progress();
+            } else {
+                showError('check_app2');
+            }
+        }
+
+        function checkApp2_2() {
+            const answer = document.getElementById('app2_3').value.trim();
+            if (answer === "50") {
+                showSuccess('check_app2_2');
+                aktivitas3Completed = Math.max(aktivitas3Completed, 2);
+                updateAktivitas3Progress();
+            } else {
+                showError('check_app2_2');
+            }
+        }
+
+        function submitSoal() {
+            // Cek apakah semua textarea sudah diisi
+            const textareas = document.querySelectorAll('#soal-individu textarea');
+            let allFilled = true;
+            let emptyCount = 0;
+            
+            textareas.forEach(textarea => {
+                if (textarea.value.trim() === '') {
+                    emptyCount++;
+                    allFilled = false;
+                }
+            });
+            
+            if (!allFilled) {
+                alert(`⚠️ Masih ada ${emptyCount} soal yang belum dijawab!\nSilakan lengkapi semua jawaban sebelum mengirim.`);
+                return;
+            }
+            
+            // Konfirmasi pengiriman
+            const confirmSubmit = confirm('🤔 Apakah Anda yakin ingin mengirim jawaban?\n\nSetelah dikirim, jawaban tidak dapat diubah lagi.');
+            
+            if (confirmSubmit) {
+                // Simulasi pengiriman
+                const submitBtn = event.target;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '⏳ Mengirim...';
+                
+                setTimeout(() => {
+                    alert('✅ Jawaban berhasil dikirim!\n\nTerima kasih telah mengerjakan soal dengan baik.\nGuru akan segera memeriksa dan memberikan feedback.');
+                    submitBtn.innerHTML = '✅ Terkirim';
+                    submitBtn.classList.remove('from-orange-500', 'to-red-500', 'hover:from-orange-600', 'hover:to-red-600');
+                    submitBtn.classList.add('from-green-500', 'to-green-600');
+                }, 2000);
+            }
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97dfe7d48488fda6',t:'MTc1NzY4NTM1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
